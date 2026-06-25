@@ -14,6 +14,8 @@ namespace WebAPI.Model
 
         }
 
+        public DbSet<users> users { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySQL("SERVER=localhost;DATABASE=szines_negy_evszak;Uid=root;PWD=");

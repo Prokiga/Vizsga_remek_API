@@ -1,6 +1,9 @@
 using Scalar.AspNetCore;
+using WebAPI.Model;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<DatabaseContext>();
 
 // Add services to the container.
 
