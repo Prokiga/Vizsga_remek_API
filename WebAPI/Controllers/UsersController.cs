@@ -36,5 +36,21 @@ namespace WebAPI.Controllers
                 throw;
             }
         }
-    }
+
+
+        [HttpGet]
+        public ActionResult GetAllUsers()
+        {
+            try
+            {
+                var usersList = db_context.users.ToList();
+                return Ok(usersList);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "An error occurred while retrieving users.", ex.Message });
+            }
+
+        }
+}
 }
